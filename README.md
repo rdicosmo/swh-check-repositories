@@ -32,40 +32,53 @@ in the files github-token and swh-api-token respectively.
 
 Step 1
 ------
+
+```
 python3 get-repos-info.py -t `cat github-token` -a `cat swh-api-token` fulldata.txt > fulldata.data 2>fulldata.log
+```
 
 Step 2
 ------
 Extract the nonfork repositories that are still in GitHub, and sort them by number of stars
 
+```
 grep -v ISFORK fulldata.data | sed 's/;.*;/;/' | sort -t \; -k 2 -n -r | grep -v NOTINGITHUB > nonfork.list
+```
 
 Step 3
 ------
 Extract original repository from fork projects
 
+```
 grep ISFORK fulldata.data | sed 's/.*ISFORK;//' | sed 's/[^;]*;//' | sed 's/;.*//' | sort -u > forked.txt
+```
 
 Step 4
 ------
 Process the forked list, extract repos still to be archived, sort them by number of stars
 
+```
 python3 get-repos-info.py -t `cat github-token` -a `cat swh-api-token` forked.txt > forked.data 2>forked.log
 egrep -v "NOTING|UPTODATE|NOWPRIVATE|TOUPDATE" forked.data | sed 's/;.*;/;/' | sort -t \; -k 2 -n -r 
+```
 
 Step 5
 ------
 Merge with the nonfork.list
 
+```
 cat forked.list nonfork.list | sort -u > priority.list
+```
 
 Step 6
 ------
 Remove number of stars
 
+```
 sed 's/;.*//' priority.list > priority.list.github
+```
 
 Step 7
 ------
 
-Use priority.list.github to feed the loaders
+Use `priority.list.github` to feed the loaders
