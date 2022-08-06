@@ -25,10 +25,10 @@ get-repos-info.py
 Example processing
 ==================
 
-From issue 5823 we get 28198 repository urls that failed git ingestion, in the file
-fulldata.txt; we want to get the relevant nonfork repositories to ingest.
-We need bearer tokes for the GH API and the SWH API, we suppose they are stored
-in the files github-token and swh-api-token respectively.
+From [issue 5823 we get 28198 repository urls](https://forge.softwareheritage.org/T4400#88794) that failed git ingestion, in the file
+`fulldata.txt`; we want to get the relevant nonfork repositories to ingest.
+We need bearer tokens for the GH API and the SWH API, we suppose they are stored
+in the files `github-token` and `swh-api-token` respectively.
 
 Step 1
 ------
