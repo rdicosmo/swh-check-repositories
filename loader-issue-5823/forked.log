@@ -1,5 +1,0 @@
-409
-Got 403, probably no more steam: limit 5000, remaining 2826
-Restart from: https://github.com/mejackreed/whosonfirst-data
-Skipping repository : https://github.com/mejackreed/whosonfirst-data; raised 403 with 2826 API ratelimit
-Skipping repository : https://github.com/theiren46/blocklist-ipsets - raised exception
