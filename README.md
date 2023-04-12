@@ -10,17 +10,16 @@ Tools
 get-repos-info.py
    take a list of github repository urls and output relevant information
    in the form of a semi-colon separated lines containing the following fields
-              canonicalurl: canonical url of the repository on GitHub
-              number of commits: number of commits (provides estimate of size of repository)
-              lastcommitdate: date of last commit on GitHub
-              swhlastvisit: date of last visit from SWH
-              visitstatus: status of the last visit as returned by SWH
-              status: summary of repository status, can be one of the following
-			          UPTODATE, TOUPDATE, NOTINSWH, NOTINGITHUB, NOWPRIVATEONGITHUB
-              isfork: ISFORK if this repository is an explicit fork
-              forkurl: url of the repository that has been forked to create this one
-              sourceurl: url of the original repository at the root of the fork chain
-              stars: number of stars on github
+    - canonicalurl: canonical url of the repository on GitHub
+    - number of commits: number of commits (provides estimate of size of repository)
+    - lastcommitdate: date of last commit on GitHub
+    - swhlastvisit: date of last visit from SWH
+    - visitstatus: status of the last visit as returned by SWH
+    - status: summary of repository status, can be one of the following: UPTODATE, TOUPDATE, NOTINSWH, NOTINGITHUB, NOWPRIVATEONGITHUB
+    - isfork: ISFORK if this repository is an explicit fork
+    - forkurl: url of the repository that has been forked to create this one
+    - sourceurl: url of the original repository at the root of the fork chain
+    - stars: number of stars on github
 
 Example processing
 ==================
