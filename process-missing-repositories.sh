@@ -33,7 +33,7 @@ FORKED_DATA=$tmppath/forked.data
 LIST_WORKING_DATA=$tmppath/fulldata.data
 LIST_NON_FORKS=$tmppath/nonfork.list
 LIST_FORKS=$tmppath/forked.list
-LIST_PRIORITY=$tmppath/priority.list
+LIST_PRIORITY=$OUTPUT.full
 
 python3 get-repos-info.py -t "$GHB_TOKEN" -a "$SWH_TOKEN" \
   $INPUT > $LIST_WORKING_DATA 2> $FULLDATA_LOG
